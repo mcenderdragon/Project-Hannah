@@ -32,7 +32,7 @@ def combine_adjectives(token):
 
 def combine_adjectives_as_text(token, seperator = " "):
 	d = combine_adjectives(token)
-	print(d)
+#	print(d)
 	s = ""
 	for c in sorted(d.keys()): 
 		if len(s)>0 and s[-1] != seperator:
