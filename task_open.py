@@ -1,5 +1,6 @@
 import interpreter as inter
 import helper_aufzaehlung as help_a
+import helper_names as help_n
 
 def init(doc, nlp):
 	who = []
@@ -17,6 +18,8 @@ def init(doc, nlp):
 					where+=inter.as_text(child)
 					
 	print("who", who, "; where", where)
+	who = list(map(help_n.resolve_links, map(help_n.find_files, who)))
+	print("who", who)
 	
 def finish(obj, doc, nlp):
 	return;

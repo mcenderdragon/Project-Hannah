@@ -1,6 +1,7 @@
 import json
+import spacy
 
-def find_root(doc):
+def find_root(doc: spacy.tokens.doc.Doc) -> spacy.tokens.token.Token:
 	for e in doc:
 		if e.dep_ == "ROOT":
 			return e
