@@ -4,6 +4,9 @@ import struct
 
 def get_desktop():
 	return os.path.expanduser("~/Desktop")
+	
+def get_user():
+	return os.path.expanduser("~")
 
 
 def get_startmenu_paths():
@@ -14,6 +17,7 @@ def get_startmenu_paths():
 def get_search_path():
 	paths = []
 	paths.append(get_desktop())
+	paths.append(get_user())
 	paths.extend(get_startmenu_paths())
 	return paths
 
